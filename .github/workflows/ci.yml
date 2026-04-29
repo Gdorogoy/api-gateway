@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 20
       - run: ls -la ./api-gateway-auth || echo "folder not found"
+      - run: npm --version
       - run: npm install -g pnpm
       - run: pnpm install
         working-directory: ./api-gateway-auth
