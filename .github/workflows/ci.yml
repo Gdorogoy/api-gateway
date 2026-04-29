@@ -11,6 +11,9 @@ jobs:
       - run: echo "job status is ${{ job.status }}"
   testing:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
     steps:
       - run: echo "hello world!"
       - name: initng node
