@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./api-gateway-auth
     steps:
       - run: echo "hello world!"
       - name: initng node
