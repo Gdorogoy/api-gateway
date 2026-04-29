@@ -6,13 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello world!"
-      - run: echo "this job triggered by ${{ github.event_name }}"
-      - run: echo "branch ${{ github.ref }}"
-      - run: echo "user ${{ github.actor }} triggered the job!"
-      - name: checking out
+      - name: "checkout"
         uses: actions/checkout@v4
-      - run: echo "testing"
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - run: echo "job status is ${{ job.status }}"
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello world!"
+      - name: initng node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run : pnpm install
+      - run : pnpn test:e2e
+      - run : "job status is ${{ job.status }}"
+        
