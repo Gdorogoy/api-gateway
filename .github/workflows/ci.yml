@@ -11,17 +11,15 @@ jobs:
       - run: echo "job status is ${{ job.status }}"
   testing:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./api-gateway-auth
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm --verion
       - run: npm install -g pnpm
       - run: pnpm install
+        working-directory: ./api-gateway-auth
       - run: pnpm test
+        working-directory: ./api-gateway-auth
       - run: echo "job status is ${{ job.status }}"
         
