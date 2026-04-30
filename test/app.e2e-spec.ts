@@ -6,6 +6,6 @@ import { AppModule } from '../src/app.module';
 
 describe('AppController (e2e)', () => {
   it('math', () => {
-    expect(1+1).toBe(2)
+    expect(1+1).toBe(3)
   });
 });
